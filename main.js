@@ -4,7 +4,9 @@ const featuresList = document.querySelector(".features-list");
 const companyList = document.querySelector(".company-list");
 const arrowF = document.querySelector(".arrow-f");
 const arrowC = document.querySelector(".arrow-c");
-console.log(featuresList)
+const menuBurger = document.querySelector(".menu");
+const close = document.querySelector(".close-menu");
+const sideBarNav = document.querySelector(".nav");
 
 features.addEventListener("click", ()=> {
     featuresList.classList.toggle("show");
@@ -17,7 +19,7 @@ features.addEventListener("click", ()=> {
         companyList.classList.remove("show");
         arrowC.setAttribute("src", "images/icon-arrow-down.svg");
     }
-})
+});
 
 company.addEventListener("click", ()=> {
     companyList.classList.toggle("show");
@@ -30,10 +32,12 @@ company.addEventListener("click", ()=> {
         featuresList.classList.remove("show");
         arrowF.setAttribute("src", "images/icon-arrow-down.svg");
     }
-})
+});
 
-// window.addEventListener("click", () => {
-//     if(featuresList.classList.contains("show")) {
-//         featuresList.classList.remove("show");
-//     }
-// })
+menuBurger.addEventListener("click", ()=> {
+    sideBarNav.classList.add("active");
+});
+
+close.addEventListener("click", ()=> {
+    sideBarNav.classList.remove("active");
+});
